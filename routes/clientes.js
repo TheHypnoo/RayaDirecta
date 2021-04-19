@@ -1,16 +1,17 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
 
-router.get('/', (req, res) => {
-    res.send('Listado de productos!')
-})
+router.get("/login", (req, res) => {
+  res.render("clientes");
+});
 
-router.post('/login', (req, res) => {
-    var nif = req.body.nif
-    var password = req.body.password
-    var error = false
-    (nif != '12345678A') ? error = true : error = false
-    (password != 'user1234') ? error = true : error = false
-})
+router.post("/login", (req, res) => {
+  const user = req.body.nif;
+  const pass = req.body.pass;
+
+  user == "12345678A" && pass == "user1234"
+    ? res.render("home")
+    : res.render("clientes", { error: true });
+});
 
 module.exports = router;

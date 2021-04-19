@@ -1,0 +1,22 @@
+include template/master
+.container.mt-5
+    .row
+        .col-2
+        .col-8
+            each value in items
+                .row.mb-3.pol
+                    .col-10
+                        span Poliza ##{value}
+                    .col-2
+                        a(href="/polizas/" + value)
+                            button.btn Ver
+        .col-2
+
+style.
+    .pol {
+        border-bottom: 2px solid grey;
+    }
+
+    .pol span {
+        font-size: 33px;
+    }

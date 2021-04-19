@@ -1,18 +1,20 @@
-extends master.pug
-block content
-  .container.mt-5
-    .row.text-center
-      h3.text-dark.text-center Presupuesto
-      hr
-      .col-12.pt-5.bg-white.text-center
-          h1.text-dark.text-center Seguro a terceros!
-      .col-6.p-3.mb-5.bg-danger.rounded.text-center
-          p.text-left.text-white #{seguroTerceros}
-      .col-12.pt-5.bg-white.text-center
-          h1.text-dark.text-center Seguro a todo riesgo (Franquicia 200€)
-      .col-6.p-3.mb-5.bg-danger.rounded.text-center
-          p.text-left.text-white #{seguroFranquicia}
-      .col-12.pt-5.bg-white.text-center
-          h1.text-dark.text-center Seguro a todo riesgo
-      .col-6.p-3.mb-5.bg-danger.rounded.text-center
-          p.text-left.text-white #{seguroTodoRiesgo}
+include template/master
+.row
+    .col-1
+    .col-10
+        h2.text-center Presupuesto
+        hr
+        .row.text-center
+            .col-4
+                h4#header Seguro a terceros
+                br
+                h4.bg-danger.rounded#val #{seguroTerceros} €
+            .col-4
+                h4#header Seguro a todo riesgo
+                h6 (franquicia 200€)
+                h4.bg-danger.rounded#val #{seguroFranquicia} €
+            .col-4
+                h4#header Seguro a todo riesgo
+                br
+                h4.bg-danger.rounded#val #{seguroTodoRiesgo} €
+    .col-1

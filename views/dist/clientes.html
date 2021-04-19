@@ -28,26 +28,24 @@
   </div>
 </nav>
 <body></body>
-<div class="row">
-  <div class="col-1"></div>
-  <div class="col-10">
-    <h2 class="text-center">Presupuesto</h2>
-    <hr>
-    <div class="row text-center">
-      <div class="col-4">
-        <h4 id="header">Seguro a terceros</h4><br>
-        <h4 class="bg-danger rounded" id="val"> €</h4>
-      </div>
-      <div class="col-4">
-        <h4 id="header">Seguro a todo riesgo</h4>
-        <h6>(franquicia 200€)</h6>
-        <h4 class="bg-danger rounded" id="val"> €</h4>
-      </div>
-      <div class="col-4">
-        <h4 id="header">Seguro a todo riesgo</h4><br>
-        <h4 class="bg-danger rounded" id="val"> €</h4>
-      </div>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-6 pt-5 bg-white text-center"><img class="d-inline-block align-top w-100" src="/images/logo.png" alt="logo"></div>
+    <div class="col-4 p-3 mb-5 bg-danger rounded">
+      <h1 class="text-white text-center">Accede a tu cuenta</h1>
+      <form action="/clientes/login" method="post">
+        <div class="form-group">
+          <label class="text-light" for="nif">NIF</label>
+          <input class="form-control" id="potencia" type="text" name="nif">
+        </div>
+        <div class="form-group">
+          <label class="text-light" for="pass">Password</label>
+          <input class="form-control" id="edad" type="password" name="pass">
+        </div>
+        <div class="form-group text-right">
+          <button class="btn btn-default" type="submit">Login</button>
+        </div>
+      </form>
     </div>
   </div>
-  <div class="col-1"></div>
 </div>

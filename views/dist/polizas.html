@@ -28,26 +28,27 @@
   </div>
 </nav>
 <body></body>
-<div class="row">
-  <div class="col-1"></div>
-  <div class="col-10">
-    <h2 class="text-center">Presupuesto</h2>
-    <hr>
-    <div class="row text-center">
-      <div class="col-4">
-        <h4 id="header">Seguro a terceros</h4><br>
-        <h4 class="bg-danger rounded" id="val"> €</h4>
-      </div>
-      <div class="col-4">
-        <h4 id="header">Seguro a todo riesgo</h4>
-        <h6>(franquicia 200€)</h6>
-        <h4 class="bg-danger rounded" id="val"> €</h4>
-      </div>
-      <div class="col-4">
-        <h4 id="header">Seguro a todo riesgo</h4><br>
-        <h4 class="bg-danger rounded" id="val"> €</h4>
-      </div>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <foreach>val in items
+        <div class="row mb-3 pol">
+          <div class="col-10"><span>Poliza #</span></div>
+          <div class="col-2"><a href="/polizas/undefined">
+              <button class="btn">Ver</button></a></div>
+        </div>
+      </foreach>
     </div>
+    <div class="col-2"></div>
   </div>
-  <div class="col-1"></div>
 </div>
+<style>
+  .pol {
+      border-bottom: 2px solid grey;
+  }
+  
+  .pol span {
+      font-size: 33px;
+  }
+</style>
