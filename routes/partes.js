@@ -1,21 +1,36 @@
-var express = require("express");
-const { formidable } = require("formidable");
-var router = express.Router();
+const express = require("express");
+const formidable = require('formidable');
+const router = express.Router();
 
 router
-  .get("/", (req, res, next) => {
-    res.render("partes");
+  .get("/", (req, res) => {
+    res.render("partes")
   })
-  .post("/", (req, res, next) => {
-    let form = formidable.IncomingForm();
 
-    form.parse(req, (err, fields, files) => {});
-    on("fileBegin", (name, file) => {
+router.post("/", (req, res) => {
+  /*
+    const form = formidable({
+      multiples: true
+    });
+  */
+  var form = new formidable.IncomingForm()
+  form.parse(req, (err, fields, files) => {});
+  form.on("fileBegin", (name, file) => {
+    var fileType = file.type.split('/').pop();
+    if (fileType == 'pdf') {
+      var extension = file.name.split('.')
+      extension[0] = Math.random().toString(36).substr(2)
+      file.name = extension[0] + '.' + extension[1]
       file.path = "./files/" + file.name;
-    });
-    on("file", (name, file) => {
-      console.log("Uploaded file!");
-    });
+      form.on("file", (name, file) => {
+        res.render("partes", { error: 2 })
+        console.log("Uploaded file!");
+      });
+    } else {
+      res.render("partes", { error: 1 })
+    }
   });
+});
+
 
 module.exports = router;

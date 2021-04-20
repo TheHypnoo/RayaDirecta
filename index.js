@@ -15,18 +15,6 @@ app.use(express.static("public"));
 app.set("views", "./views");
 
 app.set("view engine", "pug");
-app.post("/", (req, res) => {
-  const form = formidable({ multiples: true });
-
-  form.parse(req, (err, fields, files) => {});
-  form.on("fileBegin", (name, file) => {
-    file.path = "./files/" + file.name;
-  });
-  form.on("file", (name, file) => {
-    res.render('home.pug')
-    console.log("Uploaded file!");
-  });
-});
 
 app.use("/partes", require("./routes/partes"));
 app.use("/presupuesto", require("./routes/presupuestos"));

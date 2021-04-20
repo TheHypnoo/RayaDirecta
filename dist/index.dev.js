@@ -14,19 +14,6 @@ app.use(express.urlencoded({
 app.use(express["static"]("public"));
 app.set("views", "./views");
 app.set("view engine", "pug");
-app.post("/", function (req, res) {
-  var form = formidable({
-    multiples: true
-  });
-  form.parse(req, function (err, fields, files) {});
-  form.on("fileBegin", function (name, file) {
-    file.path = "./files/" + file.name;
-  });
-  form.on("file", function (name, file) {
-    res.render('home.pug');
-    console.log("Uploaded file!");
-  });
-});
 app.use("/partes", require("./routes/partes"));
 app.use("/presupuesto", require("./routes/presupuestos"));
 app.use("/polizas", require("./routes/polizas"));
