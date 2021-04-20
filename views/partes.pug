@@ -1,11 +1,19 @@
 include template/master
-h1 Upload Files
-if error == 1
-    .alert.alert-danger
-        span No se ha podido subir el archivo o la extension no es un PDF
-else if error == 2
-    .alert.alert-success
-        span Se ha subido el archivo
-form(action="/partes" method="POST" enctype="multipart/form-data")
-    input(type="file" name="file")
-    input(type="submit" value="file")
+.container.mt-5
+  .row
+    .col-2
+    .col-8
+        h1 Nuevo parte
+        if error == 1
+            .alert.alert-danger
+                span No se ha podido subir el archivo o la extension no es un PDF
+        else if error == 2
+            .alert.alert-success
+                span Se ha subido el archivo
+        hr
+        form(action='/partes' method='POST' enctype="multipart/form-data")
+            .form-group
+                label Seleciona un archivo en formato PDF
+                input.form-control(type='file' name='file')
+            .form-group.text-right
+                button.btn.btn-default(type='submit') Enviar

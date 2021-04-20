@@ -6,9 +6,12 @@ include template/master
         .col-4.p-3.mb-5.bg-danger.rounded
             h1.text-white.text-center Accede a tu cuenta
 
-            if error
+            if error == 1
                 .alert.alert-danger
                     span Credenciales incorrectas
+            else if error == 2
+                .alert.alert-success 
+                    span Credenciales Correctas
             form(action='/clientes/login' method='post')
                 .form-group
                     label.text-light(for='nif') NIF
