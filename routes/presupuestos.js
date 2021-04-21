@@ -1,17 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
-/*router.get('/:categoria', (req, res) => {
-    res.send('Listado de ' + req.params.categoria)
-})
-
-router.get('/:categoria/:subcategoria', (req, res) => {
-    res.send('Listado de ' + req.params.categoria + "(" + req.params.subcategoria + ")")
-})
-*/
-
 router.post('/', (req, res) => {
-    //Calcular presupuesto
     var descuentoTerceros = req.body.potencia * 6
     if(req.body.edad >= 28 && req.body.edad <= 50) {
         descuentoTerceros -= 100

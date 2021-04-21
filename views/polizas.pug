@@ -4,19 +4,21 @@ include template/master
         .col-2
         .col-8
             each value in items
-                .row.mb-3.pol
+                .row.mb-3.policies
                     .col-10
-                        span Poliza ##{value}
+                        span() Poliza ##{value}
                     .col-2
                         a(href="/polizas/" + value)
                             button.btn Ver
-        .col-2
 
 style.
-    .pol {
+    .btn {
+        font-size: 18px;
+    }
+    .policies {
         border-bottom: 2px solid grey;
     }
 
-    .pol span {
+    .policies span {
         font-size: 33px;
     }

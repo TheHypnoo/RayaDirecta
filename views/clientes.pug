@@ -15,9 +15,9 @@ include template/master
             form(action='/clientes/login' method='post')
                 .form-group
                     label.text-light(for='nif') NIF
-                    input#potencia.form-control(type='text' name='nif')
+                    input.form-control(type='text' name='nif')
                 .form-group
                     label.text-light(for='pass') Password
-                    input#edad.form-control(type='password' name='pass')
+                    input.form-control(type='password' name='pass')
                 .form-group.text-right
                     button.btn.btn-default(type='submit') Login

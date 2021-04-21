@@ -1,20 +1,20 @@
 include template/master
-.row
-    .col-1
-    .col-10
-        h2.text-center Presupuesto
-        hr
-        .row.text-center
-            .col-4
-                h4#header Seguro a terceros
-                br
-                h4.bg-danger.rounded#val #{seguroTerceros} €
-            .col-4
-                h4#header Seguro a todo riesgo
-                h6 (franquicia 200€)
-                h4.bg-danger.rounded#val #{seguroFranquicia} €
-            .col-4
-                h4#header Seguro a todo riesgo
-                br
-                h4.bg-danger.rounded#val #{seguroTodoRiesgo} €
-    .col-1
+.container.mt-4
+    .row
+        .col-1
+        .col-10
+            h2.text-center Presupuesto
+            hr
+            .row.text-center
+                .col-4
+                    h4 Seguro a terceros
+                    br
+                    h4.bg-danger.rounded.text-white #{seguroTerceros} €
+                .col-4
+                    h4 Seguro a todo riesgo
+                    h6 (franquicia 200€)
+                    h4.bg-danger.rounded.text-white #{seguroFranquicia} €
+                .col-4
+                    h4 Seguro a todo riesgo
+                    br
+                    h4.bg-danger.rounded.text-white #{seguroTodoRiesgo} €
